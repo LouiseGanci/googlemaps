@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Simple Map</title>
+    <title>Simple Marker</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -19,7 +19,7 @@
         html,
         body {
             height: 100%;
-            margin: 0;
+            margin: 0 auto;
             padding: 0;
         }
     </style>
@@ -27,20 +27,35 @@
 
 <body>
     <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWU2_Hj2TXQse1UoF11rP5uqaNm8QGbF0&callback=initMap" async defer></script>
     <script>
         var map;
+        var ejboparken = {
+            lat: 55.629022,
+            lng: 12.062774
+        };
 
         function initMap() {
+            var yndlingssted = {
+                lat: 55.629022,
+                lng: 12.062774
+            };
+
+
             map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: 55.629022,
-                    lng: 12.062774
-                },
-                zoom: 8
+                center: ejboparken,
+
+                zoom: 14,
+                center: yndlingssted
+            });
+
+            var marker = new google.maps.Marker({
+                position: yndlingssted,
+                map: map,
+                title: 'Hello World!'
             });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWU2_Hj2TXQse1UoF11rP5uqaNm8QGbF0&callback=initMap" async defer></script>
 </body>
 
 </html>
