@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Marker animations</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+        #map {
+            height: 70%;
+            width: 70%;
+            margin: 0 auto;
+        }
+        /* Optional: Makes the sample page fill the window. */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWU2_Hj2TXQse1UoF11rP5uqaNm8QGbF0&callback=initMap" async defer></script>
+    <script>
+        var map;
+        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+        var ejboparken = {
+            lat: 55.629022,
+            lng: 12.062774
+        };
+        var mor = {
+            lat: 55.232769,
+            lng: 11.736653
+
+            //55.232769, 11.736653
+        };
+
+        var far = {
+            lat: 55.230776,
+            lng: 11.777140
+
+            // 55.230776, 11.777140
+        };
+
+        var farmor = {
+            lat: 55.215006,
+            lng: 11.752472
+
+            // 55.215006, 11.752472
+        };
+
+        var mormor = {
+            lat: 55.664518,
+            lng: 12.491294
+
+            // 55.664518, 12.491294
+        };
+
+        var sviger = {
+            lat: 55.275940,
+            lng: 11.797559
+
+            // 55.275940, 11.797559
+        };
+
+        var center = {
+            lat: 55.464023,
+            lng: 11.834078
+
+            // 55.464023, 11.834078
+        };
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: center,
+
+                zoom: 9,
+                center: center
+            });
+
+            var marker = new google.maps.Marker({
+                position: ejboparken,
+                map: map,
+                title: 'Ejboparken',
+                icon: 'home.png',
+                animation: google.maps.Animation.BOUNCE,
+            });
+
+            var marker = new google.maps.Marker({
+                position: mor,
+                map: map,
+                title: 'Mor',
+                icon: 'people.png',
+                animation: google.maps.Animation.DROP,
+            });
+
+            var marker = new google.maps.Marker({
+                position: far,
+                map: map,
+                title: 'Far',
+                icon: 'gamer.png',
+                animation: google.maps.Animation.DROP,
+
+            });
+
+            var marker = new google.maps.Marker({
+                position: farmor,
+                map: map,
+                title: 'Farmor',
+                animation: google.maps.Animation.DROP,
+
+            });
+
+            var marker = new google.maps.Marker({
+                position: mormor,
+                map: map,
+                title: 'Mormor',
+                animation: google.maps.Animation.DROP,
+            });
+
+            var marker = new google.maps.Marker({
+                position: sviger,
+                map: map,
+                title: 'Sviger',
+                animation: google.maps.Animation.DROP,
+
+            });
+        }
+    </script>
+</body>
+
+</html>
